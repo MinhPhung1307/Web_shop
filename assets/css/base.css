@@ -1,0 +1,211 @@
+:root{
+    --while-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --main-color: #EE4D2D;
+    --header-height: 120px;
+    --navbar-height: 46px;
+    --container-sort-bar-height: 46px;
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+.pt-24{
+    padding-top: 24px;
+}
+.pt-40{
+    padding-top: 40px;
+}
+.pb-40{
+    padding-bottom: 40px;
+}
+.mt-120{
+    margin-top: 120px;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.border-top{
+    border-top: 1px solid #e6e6e6;
+}
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: FadeIn linear 0.1s;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__body{
+    --growth-from: 0.7;
+    --growth-to: 1;
+    position: relative;
+    background-color: var(--while-color);
+    margin: auto;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+}
+/* Button */
+.btn{
+    min-width: 132px;
+    height: 36px;
+    border: none;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 0;
+    cursor: pointer;
+    color: var(--text-color);
+    border: 1px solid #ccc;
+}
+.btn.btn-s{
+    font-size: 12px;
+    height: 32px;
+}
+.btn:hover{
+    opacity: 0.8;
+}
+.btn.btn--main{
+    background-color: var(--main-color);
+    color: var(--while-color);
+}
+.btn.btn-disabled{
+    opacity: 0.5 !important;
+    cursor: default !important;
+}
+/* selection */
+.selection{
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
+    height: 34px;
+    background-color: var(--while-color);
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 0 12px;
+    cursor: pointer;
+}
+.selection__items{
+    position: absolute;
+    top: calc(100% + 2px);
+    z-index: 1;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    left: 0;
+    right: 0;
+    background-color: var(--while-color);
+    border-radius: 2px;
+    overflow: none;
+    display: none;
+}
+.selection__item{
+    padding: 12px;
+}
+.selection__item:hover{
+    background-color: #f4f0f0;
+}
+.selection__item:hover .selection__item-link{
+    color: var(--main-color);
+}
+.selection__item-link{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+.selection:hover{
+    background-color: #eeeaea;
+}
+.selection:hover .selection__items{
+    display: block;
+}
+.selection__name{
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+.selection__icon{
+    font-size: 1.4rem;
+    color: #ccc;
+}
+/* pagination */
+.pagination{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.pagination__item{
+    text-decoration: none;
+    min-width: 40px;
+    height: 30px;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.4);
+    line-height: 30px;
+    text-align: center;
+    margin: 0 15px;
+}
+.pagination__item.pagination__item--disable{
+    margin-left: 0;
+    cursor: default;
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+.pagination__item:hover{
+    color: var(--main-color);
+}
+.pagination__item.pagination__item--active{
+    background-color: var(--main-color);
+    color: var(--while-color);
+}
+.pagination__item.pagination__item--no-active{
+    cursor: text !important;
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+/* keyframes */
+@keyframes FadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+@keyframes FadeInScale{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
