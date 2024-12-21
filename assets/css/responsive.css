@@ -270,4 +270,13 @@
     .header-search__logo-icon {
         width: 120px;
     }
+    .product-container__inf-active-Evaluate-star{
+        font-size: 0.7rem;
+    }
+    .product-container__inf-active-no-favourite{
+        font-size: 1.2rem;
+    }
+    .product-container__inf-active-favourite{
+        font-size: 1.2rem;
+    }
 }
