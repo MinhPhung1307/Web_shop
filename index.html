@@ -195,12 +195,12 @@
                             </div>
                         </div>
                     </div>    
-                    <div class="header-search__cart-container col l-1 m-1 c-1">
+                    <div onclick="showCart()" class="header-search__cart-container col l-1 m-1 c-1" id="show-header-search__cart-container">
                         <div class="header-search__cart">
                             <div class="header-search__cart-group">
                                 <i class="header-search__cart-icon fa-solid fa-cart-shopping"></i>
                                 <div class="header-search__cart-notify">3</div>
-                                <div class="header-search__cart-product">
+                                <div class="header-search__cart-product" id="header-search__cart-product-active">
                                     <img class="header-search__cart-product-img" src="./assets/img/no-cart.png" alt="no-cart">
                                     <h3>Chưa có sản phẩm</h3>
                                     <!-- cart có sản phẩm -->
@@ -1299,5 +1299,19 @@
             <!-- </div> -->
         <!-- </div> -->
     </div>
+    <script>
+        const cart = document.getElementById('show-header-search__cart-container');
+        const containerProduct = document.getElementById('header-search__cart-product-active');
+        console.log(cart);
+        function showCart(){
+            console.log(containerProduct.classList.contains('show-cart-product'))
+            if(!containerProduct.classList.contains('show-cart-product')){
+                containerProduct.classList.add('show-cart-product')
+            }
+            else{
+                containerProduct.classList.remove('show-cart-product')
+            }
+        }
+    </script>
 </body>
 </html>

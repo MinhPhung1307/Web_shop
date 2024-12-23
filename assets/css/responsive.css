@@ -78,6 +78,12 @@
     .app__footer-info-author{
         margin-right: 16px;
     }
+    .header-search__cart-group:hover .header-search__cart-product {
+        display: none;
+    }
+    .header-search__cart-group .show-cart-product.header-search__cart-product{
+        display: block;
+    }
 }
 
 /* tablet */
